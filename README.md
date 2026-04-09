@@ -23,9 +23,19 @@
   <a href="mailto:hzienda.5a2@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-333333?style=for-the-badge&logo=gmail&logoColor=red" />
   </a>
-  <a href="https://github.com/CreazyBoyxD">
-    <img src="https://img.shields.io/badge/GitHub-111111?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
+</div>
+
+<div align="center">
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/CreazyBoyxD/CreazyBoyxD/main/status/currently.json" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/CreazyBoyxD/CreazyBoyxD/main/status/playing.json" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/CreazyBoyxD/CreazyBoyxD/main/status/coding.json" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/CreazyBoyxD/CreazyBoyxD/main/status/listening.json" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=creazyboyxd&cover_image=true&theme=novatorem&show_offline=false&background_color=121212" />
 </div>
 
 <br/>
@@ -36,7 +46,8 @@
 
 <div align="center">
     <img src="https://skillicons.dev/icons?i=python,js,java,cs,cpp" /><br/>
-    <img src="https://skillicons.dev/icons?i=react,nextjs,nodejs" /><br/>
+    <img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,html,css" /><br/>
+    <img src="https://skillicons.dev/icons?i=express,idea,matlab,pycharm,npm" /><br/>
     <img src="https://skillicons.dev/icons?i=mysql,git,github,unity,vscode" /><br/>
 </div>
 
@@ -64,19 +75,11 @@
 <div align="center">
   <img src="https://streak-stats.demolab.com?user=CreazyBoyxD&theme=tokyonight" />
   <br/>
-  <img src="https://github-readme-stats.vercel.app/api?username=CreazyBoyxD&show_icons=true&theme=tokyonight" />
   <br/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=CreazyBoyxD&layout=compact&theme=tokyonight" />
-</div>
-
-<br/>
-<hr/>
-
-<h2 align="center">🏆 Achievements 🏆</h2>
-<br/>
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=CreazyBoyxD&theme=tokyonight&no-frame=true&row=1&column=6" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=CreazyBoyxD&show_icons=true&theme=tokyonight&hide_border=true" />
+  <br/>
+  <br/>
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=CreazyBoyxD&layout=compact&theme=tokyonight&hide_border=true" />
 </div>
 
 <br/>
@@ -86,17 +89,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" />
-</div>
-
-<br/>
-<hr/>
-
-<h2 align="center">👀 Profile Views</h2>
-<br/>
-
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=CreazyBoyxD&label=Profile%20views&color=0e75b6&style=flat" />
+  <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake-dark.svg" />
 </div>
 
 <br/><br/>
