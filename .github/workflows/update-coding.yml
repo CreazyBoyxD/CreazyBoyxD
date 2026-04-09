@@ -1,0 +1,38 @@
+name: Update coding badge
+
+on:
+  workflow_dispatch:
+    inputs:
+      coding:
+        description: "Coding status"
+        required: true
+        default: "nothing"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update coding.json
+        run: |
+          mkdir -p status
+          cat > status/coding.json << EOF
+          {
+            "schemaVersion": 1,
+            "label": "coding",
+            "message": "${{ github.event.inputs.coding }}",
+            "color": "8a2be2",
+            "labelColor": "555555",
+            "style": "flat"
+          }
+          EOF
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add status/coding.json
+          git commit -m "Update coding badge" || echo "No changes"
+          git push

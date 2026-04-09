@@ -1,0 +1,83 @@
+name: Update live status
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Discord status from Lanyard
+        run: |
+          curl -s https://api.lanyard.rest/v1/users/353582568102297600 > lanyard.json
+          cat lanyard.json
+
+      - name: Build badge JSON files
+        run: |
+          python3 - << 'PY'
+          import json
+
+          with open("lanyard.json", "r", encoding="utf-8") as f:
+              data = json.load(f)["data"]
+
+          discord_status = data.get("discord_status", "offline")
+          activities = data.get("activities", [])
+
+          currently_message = {
+              "online": "online",
+              "idle": "idle",
+              "dnd": "dnd",
+              "offline": "offline"
+          }.get(discord_status, "offline")
+
+          currently_color = {
+              "online": "brightgreen",
+              "idle": "yellow",
+              "dnd": "red",
+              "offline": "lightgrey"
+          }.get(discord_status, "lightgrey")
+
+          playing_message = "nothing"
+          for act in activities:
+              # Discord custom status ma type 4, gry zwykle type 0
+              if act.get("type") == 0 and act.get("name") != "Spotify":
+                  playing_message = act.get("name", "nothing")
+                  break
+
+          currently = {
+              "schemaVersion": 1,
+              "label": "currently",
+              "message": currently_message,
+              "color": currently_color,
+              "labelColor": "555555",
+              "style": "flat"
+          }
+
+          playing = {
+              "schemaVersion": 1,
+              "label": "playing",
+              "message": playing_message,
+              "color": "1e90ff" if playing_message != "nothing" else "lightgrey",
+              "labelColor": "555555",
+              "style": "flat"
+          }
+
+          with open("status/currently.json", "w", encoding="utf-8") as f:
+              json.dump(currently, f)
+
+          with open("status/playing.json", "w", encoding="utf-8") as f:
+              json.dump(playing, f)
+          PY
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add status/currently.json status/playing.json
+          git commit -m "Update live Discord badges" || echo "No changes"
+          git push
